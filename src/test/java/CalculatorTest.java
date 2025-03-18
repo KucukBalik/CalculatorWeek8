@@ -1,4 +1,3 @@
-import com.sun.jdi.IntegerValue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -20,12 +19,27 @@ public class CalculatorTest {
     }
 
     @Test
+    void testSubsSuccess()
+    {
+        assertEquals(0, myCalc.Subs(4,4));
+    }
+
+    @Test
 
     void testAddFailure()
     {
-       Exception ex = assertThrows(IllegalArgumentException.class, ()->{myCalc.add(Integer.MAX_VALUE, 4);});
+       Exception ex = assertThrows(IllegalArgumentException.class, ()->{myCalc.add(Integer.MAX_VALUE, 5);});
 
        assertEquals("Input is too large", ex.getMessage());
+
+    }
+
+    @Test
+    void testSubsFailure()
+    {
+        Exception ex = assertThrows(IllegalArgumentException.class, ()->{myCalc.Subs(3, 4);});
+
+        assertEquals("Result cant be minus!", ex.getMessage());
 
     }
 }
