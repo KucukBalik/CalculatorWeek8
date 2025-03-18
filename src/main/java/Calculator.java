@@ -21,4 +21,17 @@ public class Calculator {
         return (int) result;
     }
 
+    public int Div(int first, int second) {
+
+        if (second == 0) {
+
+            throw new ArithmeticException("You can not divide anything by zero!");
+        }
+
+        long result = (long) first / second;
+
+        return (int) result;
+    }
+
+
 }
