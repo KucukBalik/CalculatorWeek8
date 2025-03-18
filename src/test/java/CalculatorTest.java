@@ -42,4 +42,13 @@ public class CalculatorTest {
         assertEquals("Result cant be minus!", ex.getMessage());
 
     }
+
+    @Test
+    void testDivFailure()
+    {
+        Exception ex = assertThrows(ArithmeticException.class, ()->{myCalc.Div(3, 0);});
+
+        assertEquals("You can not divide anything by zero!", ex.getMessage());
+
+    }
 }
