@@ -25,6 +25,12 @@ public class CalculatorTest {
     }
 
     @Test
+    void testDivSuccess()
+    {
+        assertEquals(2, myCalc.Div(8,4));
+    }
+
+    @Test
 
     void testAddFailure()
     {
