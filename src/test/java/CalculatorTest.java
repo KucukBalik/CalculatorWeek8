@@ -31,6 +31,13 @@ public class CalculatorTest {
     }
 
     @Test
+    void testMultiSuccess()
+    {
+        assertEquals(32, myCalc.Multi(8,4));
+    }
+
+
+    @Test
 
     void testAddFailure()
     {
@@ -55,6 +62,15 @@ public class CalculatorTest {
         Exception ex = assertThrows(ArithmeticException.class, ()->{myCalc.Div(3, 0);});
 
         assertEquals("You can not divide anything by zero!", ex.getMessage());
+
+    }
+
+    @Test
+    void testMultiFailure()
+    {
+        Exception ex = assertThrows(UnsupportedOperationException.class, ()->{myCalc.Multi(Integer.MAX_VALUE, 2);});
+
+        assertEquals("Value is too big!", ex.getMessage());
 
     }
 }

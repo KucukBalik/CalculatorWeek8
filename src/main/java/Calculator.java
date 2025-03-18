@@ -34,4 +34,17 @@ public class Calculator {
     }
 
 
+    public int Multi(int first, int second) {
+
+        long result = (long) first * second;
+
+        if (result > Integer.MAX_VALUE) {
+
+            throw new UnsupportedOperationException("Value is too big!");
+        }
+
+        return (int) result;
+    }
+
+
 }
